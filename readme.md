@@ -1,8 +1,15 @@
-# Python libraries for usaepay.com credit card gateway #
+# Python library for usaepay.com credit card gateway
 
 Python library for https://usaepay.info/ payment card processing.
 
 Written by reverse engineering PHP code from official SDK: https://help.usaepay.info/developer/sdks/php/
+
+## Install
+```bash
+git clone  https://github.com/aivisol/py-usaepay.git
+cd py-usaepay/
+python setup.py install
+```
 
 ## Example use
 

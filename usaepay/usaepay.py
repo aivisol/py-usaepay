@@ -6,9 +6,9 @@ import hashlib
 import urllib
 import urllib2
 try:
-    from urllib.parse import parse_qs
+	from urllib.parse import parse_qs
 except ImportError:
-    from urlparse import parse_qs
+	from urlparse import parse_qs
 
 import fieldmap
 
