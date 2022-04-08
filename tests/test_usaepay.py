@@ -3,7 +3,7 @@ from usaepay import usaepay
 try:
 	import test_data as test_data
 except:
-	import test_data_default as test_data
+	from . import test_data_default as test_data
 
 class UsaePayTestCase(unittest.TestCase):
 	def setUp(self):

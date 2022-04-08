@@ -3,14 +3,14 @@ import random
 import time
 import base64
 import hashlib
-import urllib
-import urllib2
+import urllib.request, urllib.parse, urllib.error
+import urllib.request, urllib.error, urllib.parse
 try:
 	from urllib.parse import parse_qs
 except ImportError:
-	from urlparse import parse_qs
+	from urllib.parse import parse_qs
 
-import fieldmap
+from . import fieldmap
 
 class UmTransaction():
 
@@ -331,16 +331,16 @@ class UmTransaction():
 
 	def http_post(self, url, data):
 
-		postdata = urllib.urlencode(data)
+		postdata = urllib.parse.urlencode(data)
 
 		try:
-			content = urllib2.urlopen(url=url, data=postdata).read()
+			content = urllib.request.urlopen(url=url, data=postdata).read()
 			error = ''
-		except urllib2.HTTPError, e:
+		except urllib.error.HTTPError as e:
 			error = 'HTTPError = ' + str(e.code)
-		except urllib2.URLError, e:
+		except urllib.error.URLError as e:
 			error = 'URLError = ' + str(e.reason)
-		except httplib.HTTPException, e:
+		except httplib.HTTPException as e:
 			error = 'HTTPException'
 		except Exception:
 			import traceback
